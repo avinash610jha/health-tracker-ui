@@ -1,0 +1,32 @@
+<mvc:View controllerName="healthtrackerui.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+			<Button id="idButtonRefresh" type="Transparent"  icon="sap-icon://refresh" press="onAlertDetailsRefresh" tooltip="{i18n>ALR_DETAILS_REFRESH}" />
+			<Button id="idButtonFullScreen" type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="{i18n>ALR_DETAILS_FULL_SCREEN}" />
+			<Button id="idButtonExitFullScreen" type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="{i18n>ALR_DETAILS_EXII_FULL_SCREEN}" />
+			<Button id="idButtonCloseDetailsView" type="Transparent" icon="sap-icon://decline" press="handleDetailsViewClose" tooltip="{i18n>ALR_CLOSE_DETAILS_VIEW}" />
+		</headerContent>
+        <content>
+            <List
+				binding="{/SupplierCollection/0}"
+				headerText="Users" >
+				<DisplayListItem
+					label="Name"
+					value="{SupplierName}" />
+				<DisplayListItem
+					label="Street"
+					value="{Street} {HouseNumber}" />
+				<DisplayListItem
+					label="City"
+					value="{ZIPCode} {City}"
+					type="Navigation"/>
+				<DisplayListItem
+					label="Country"
+					value="{Country}"
+					type="Navigation" />
+			</List>
+        </content>
+    </Page>
+</mvc:View>
